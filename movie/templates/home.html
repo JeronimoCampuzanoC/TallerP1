@@ -12,6 +12,9 @@
         }
     </style>
 </head>
+
+{% extends 'base.html' %}
+{% block content %}
 <h1>Welcome to Home page for movies</h1>
 <h2>This is the full home page, enjoy it</h2>
 <div class="container">
@@ -32,6 +35,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{ movie.title }}</h5>
                 <p class="card-text">{{ movie.description }}</p>
+                <p class="card-text">{{ movie.genre }}</p>
+                <p class="card-text">{{ movie.year }}</p>
+
                 {% if movie.url %}
                 <a href="{{ movie.url }}" class="btn btn-primary">Watch here</a>
                 {% else %}
@@ -43,3 +49,4 @@
     </div>
     <br />
 </div>
+{% endblock content %}
